@@ -5,13 +5,14 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
+    <script type="module" src="/main.js"></script>
   </head>
   <body>
     <div id="app">
       <button onclick="error()">error</button>
       <button onclick="promiseError()">promise</button>
     </div>
-    <script type="module" src="/main.js"></script>
+    <script type="module" src="/notfound.js"></script>
     <script>
       const error = () => {
         console.log(a.se1);
@@ -19,7 +20,6 @@
       const promiseError = () => {
         new Promise((resolve, reject) => {
           window.let.a = 1
-          // reject('232')
         })
       }
     </script>
