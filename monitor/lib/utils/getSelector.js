@@ -3,7 +3,7 @@ const getSelector = (element) => {
   let target = element.target
 
   while(target && target !== (document || window)) {
-    path.push(target)
+    path.unshift(target)
 
     target = target.parentNode
   }
@@ -17,7 +17,7 @@ const getSelector = (element) => {
     }
 
     return dom.nodeName.toLowerCase()
-  }).reverse().join(' ')
+  }).join(' ')
 
   return selector
 }

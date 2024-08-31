@@ -1,11 +1,9 @@
 import getLastEvent from '../utils/getLastEvent.js'
 import getSelector from '../utils/getSelector.js'
+import getStackInfo from '../utils/getStackInfo.js'
 
 export const injectJsError = () => {
-  const getLines = (stackInfo) => {
-    return stackInfo.split('\n').slice(1)
-      .map(item => item.replace(/^\s+at\s/g, '')).join(' > ')
-  }
+  
 
 
   window.addEventListener('error', (e) => {
@@ -15,11 +13,11 @@ export const injectJsError = () => {
       kind: 'stability',
       type: 'error',
       errorType: 'jsError',
-      url: '',
+      url: location.href,
       message: e.message,
       filename: e.filename,
       postion: [e.lineno, e.colno],
-      stack: getLines(e.error.stack),
+      stack: getStackInfo(e.error.stack),
       selector: lastEvent ? getSelector(lastEvent) : ''
     }
 

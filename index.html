@@ -8,13 +8,19 @@
   </head>
   <body>
     <div id="app">
-      <button onclick="error()">12</button>
+      <button onclick="error()">error</button>
+      <button onclick="promiseError()">promise</button>
     </div>
     <script type="module" src="/main.js"></script>
     <script>
       const error = () => {
         console.log(a.se1);
-        
+      }
+      const promiseError = () => {
+        new Promise((resolve, reject) => {
+          window.let.a = 1
+          // reject('232')
+        })
       }
     </script>
   </body>
