@@ -23,7 +23,7 @@ export const injectXMLError = () => {
         type: 'xhr',
         errorType,
         url: location.href,
-        pathname: this.logData.url,
+        requstUrl: this.logData.url,
         status: this.status,
         duration: timer,
         response: this.response || null,
