@@ -3,12 +3,14 @@ import * as errorCollection from './lib'
 const init = () => {
   const {
     injectJsError,
-    injectPromiseError
+    injectPromiseError,
+    injectXMLError
   } = errorCollection
   
 
   injectJsError()
   injectPromiseError()
+  injectXMLError()
 }
 
 export default init

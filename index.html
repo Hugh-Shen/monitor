@@ -11,8 +11,8 @@
     <div id="app">
       <button onclick="error()">error</button>
       <button onclick="promiseError()">promise</button>
+      <button onclick="requestError()">request</button>
     </div>
-    <script type="module" src="/notfound.js"></script>
     <script>
       const error = () => {
         console.log(a.se1);
@@ -21,6 +21,15 @@
         new Promise((resolve, reject) => {
           window.let.a = 1
         })
+      }
+      const requestError = () => {
+        const xhr = new XMLHttpRequest()
+        xhr.open('get', 'https://www.baidu.com/sugrec')
+        xhr.responseType = 'json'
+        xhr.onload = () => {
+          console.log(xhr.response)
+        }
+        xhr.send()
       }
     </script>
   </body>
