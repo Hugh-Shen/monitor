@@ -24,6 +24,8 @@ const timing = () => {
       type: 'timing',
       domainTime: domainLookupEnd - domainLookupStart,
       connectTime: connectEnd - connectStart,
+      FP: performanceEntries[11].startTime,
+      FCP: performanceEntries[12].startTime,
       ttfbTime: responseStart - requestStart, // 首字节到达时间
       loadTime: loadEventEnd - fetchStart, // 首次加载时间
       timeToInteraction: domInteractive - fetchStart, // 首次交互时间
@@ -33,7 +35,7 @@ const timing = () => {
       domContentLoadedEventTime: domContentLoadedEventEnd - domContentLoadedEventStart,
     }
 
-    console.log(log)
+    console.log(performanceEntries, log)
   }, 3000)
 }
 
