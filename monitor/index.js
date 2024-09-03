@@ -1,4 +1,6 @@
 import * as errorCollection from './lib'
+import { onLoadCycle } from './lib/lifeCycle'
+import timing from './lib/performance/timing'
 
 const init = () => {
   const {
@@ -15,6 +17,7 @@ const init = () => {
   blankScreen()
 
   // init lifecycle
+  onLoadCycle(timing)
 }
 
 export default init

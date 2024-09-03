@@ -16,7 +16,7 @@ export const injectPromiseError = () => {
 
       message = reason.message
       filename = match[1]
-      postion = [match[2], match[3]]
+      postion = [+match[2], +match[3]]
       stack = getStackInfo(reason.stack)
     }
 
