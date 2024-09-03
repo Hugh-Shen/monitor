@@ -4,13 +4,17 @@ const init = () => {
   const {
     injectJsError,
     injectPromiseError,
-    injectXMLError
+    injectXMLError,
+    blankScreen
   } = errorCollection
   
 
   injectJsError()
   injectPromiseError()
   injectXMLError()
+  blankScreen()
+
+  // init lifecycle
 }
 
 export default init
