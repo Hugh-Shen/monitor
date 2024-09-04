@@ -24,8 +24,8 @@ const timing = () => {
       type: 'timing',
       domainTime: domainLookupEnd - domainLookupStart,
       connectTime: connectEnd - connectStart,
-      FP: performanceEntries[11].startTime,
-      FCP: performanceEntries[12].startTime,
+      FP: performance.getEntriesByName('first-paint')[0].startTime,
+      FCP: performance.getEntriesByName('first-contentful-paint')[0].startTime,
       ttfbTime: responseStart - requestStart, // 首字节到达时间
       loadTime: loadEventEnd - fetchStart, // 首次加载时间
       timeToInteraction: domInteractive - fetchStart, // 首次交互时间
